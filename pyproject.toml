@@ -1,0 +1,81 @@
+[build-system]
+requires = ["uv_build>=0.12.0,<0.13"]
+build-backend = "uv_build"
+
+[project]
+name = "didactyl"
+version = "0.1.0"
+description = "A Python-native engine for repository-based, exercise-driven tutorials"
+readme = "README.md"
+requires-python = ">=3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+  { name = "Didactyl contributors" },
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console :: Curses",
+  "Intended Audience :: Developers",
+  "Intended Audience :: Education",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: MacOS",
+  "Operating System :: POSIX",
+  "Operating System :: Microsoft :: Windows",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+  "Topic :: Education",
+  "Topic :: Software Development :: Testing",
+]
+dependencies = [
+  "pytest>=9.0",
+]
+
+[project.scripts]
+didactyl = "didactyl.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/j-emberton/didactyl"
+Repository = "https://github.com/j-emberton/didactyl"
+Issues = "https://github.com/j-emberton/didactyl/issues"
+
+[dependency-groups]
+dev = [
+  "pyrefly>=1.1.0",
+  "pytest-cov>=7.0",
+  "ruff>=0.16",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = ["-ra"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "ANN1",
+    "COM812",
+    "COM819",
+    "D206",
+    "D300",
+    "E111",
+    "E114",
+    "E117",
+    "E501",
+    "ISC001",
+    "ISC002",
+    "Q000",
+    "Q001",
+    "Q002",
+    "Q003",
+    "W191",
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
