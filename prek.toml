@@ -1,0 +1,153 @@
+default_install_hook_types = ["pre-commit", "pre-push"]
+
+
+# Basic file checks
+
+[[repos]]
+repo = "builtin"
+
+[[repos.hooks]]
+id = "check-added-large-files"
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "check-case-conflict"
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "check-illegal-windows-names"
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "check-merge-conflict"
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "detect-private-key"
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "end-of-file-fixer"
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "trailing-whitespace"
+stages = ["pre-commit"]
+
+
+# YAML
+
+[[repos]]
+repo = "https://github.com/adrienverge/yamllint.git"
+rev = "v1.38.0"
+
+[[repos.hooks]]
+id = "yamllint"
+args = ["--strict"]
+stages = ["pre-commit"]
+
+
+# TOML
+
+[[repos]]
+repo = "https://github.com/ComPWA/taplo-pre-commit"
+rev = "v0.9.3"
+
+[[repos.hooks]]
+id = "taplo-lint"
+args = []
+stages = ["pre-commit"]
+
+
+# GitHub Actions correctness
+
+[[repos]]
+repo = "https://github.com/rhysd/actionlint"
+rev = "v1.7.12"
+
+[[repos.hooks]]
+id = "actionlint"
+stages = ["pre-commit"]
+
+
+# GitHub Actions security
+
+[[repos]]
+repo = "https://github.com/zizmorcore/zizmor-pre-commit"
+rev = "v1.28.0"
+
+[[repos.hooks]]
+id = "zizmor"
+stages = ["pre-push"]
+
+
+# Markdown
+
+[[repos]]
+repo = "https://github.com/DavidAnson/markdownlint-cli2"
+rev = "v0.23.2"
+
+[[repos.hooks]]
+id = "markdownlint-cli2"
+stages = ["pre-commit"]
+
+
+# Python checks
+
+[[repos]]
+repo = "local"
+
+[[repos.hooks]]
+id = "ruff-check"
+name = "Ruff check"
+entry = "uv run ruff check --fix"
+language = "system"
+types = ["python"]
+stages = ["pre-commit"]
+
+[[repos.hooks]]
+id = "ruff-format"
+name = "Ruff format"
+entry = "uv run ruff format"
+language = "system"
+types = ["python"]
+stages = ["pre-commit"]
+
+
+# Full repository checks before pushing
+
+[[repos.hooks]]
+id = "ruff-check-all"
+name = "Ruff check all"
+entry = "uv run ruff check ."
+language = "system"
+pass_filenames = false
+always_run = true
+stages = ["pre-push"]
+
+[[repos.hooks]]
+id = "ruff-format-check"
+name = "Ruff format check"
+entry = "uv run ruff format --check ."
+language = "system"
+pass_filenames = false
+always_run = true
+stages = ["pre-push"]
+
+[[repos.hooks]]
+id = "pyrefly"
+name = "Pyrefly"
+entry = "uv run pyrefly check ."
+language = "system"
+pass_filenames = false
+always_run = true
+stages = ["pre-push"]
+
+[[repos.hooks]]
+id = "pytest"
+name = "pytest"
+entry = "uv run pytest"
+language = "system"
+pass_filenames = false
+always_run = true
+stages = ["pre-push"]
