@@ -168,7 +168,7 @@ def exercise_lesson(*, title: str) -> str:
     )
 
 
-def exercise_metadata_entry(
+def exercise_metadata_entry(  # noqa: PLR0913
     *,
     name: str,
     title: str,

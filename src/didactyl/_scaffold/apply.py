@@ -1,9 +1,12 @@
-from pathlib import Path
+import typing
 
 from didactyl._scaffold.models import (
     ScaffoldPlan,
     ScaffoldResult,
 )
+
+if typing.TYPE_CHECKING:
+    from pathlib import Path
 
 
 def apply_scaffold(
