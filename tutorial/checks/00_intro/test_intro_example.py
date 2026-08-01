@@ -1,6 +1,5 @@
 from didactyl.testing import load_exercise_module
 
-
 exercise = load_exercise_module()
 
 

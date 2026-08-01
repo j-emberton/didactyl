@@ -21,7 +21,7 @@ from didactyl._progress import (
     save_progress,
 )
 from didactyl._runner import check_all, run_exercise, verify_course
-from didactyl.scaffold._scaffold import (
+from didactyl._scaffold import (
     ExerciseScaffold,
     TutorialScaffold,
     apply_scaffold,
