@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 
 from didactyl._course import find_course_root, load_course
-from didactyl._models import Course, Exercise, Progress, ScaffoldResult
+from didactyl._models import Course, Exercise, Progress
 from didactyl._progress import (
     current_exercise,
     exercise_digest,
@@ -17,6 +17,7 @@ from didactyl._progress import (
 )
 from didactyl._runner import check_all, run_exercise, verify_course
 from didactyl._scaffold import scaffold_exercise, scaffold_tutorial
+from didactyl._scaffold.models import ScaffoldResult
 from didactyl._tui import run_tui
 from didactyl._version import __version__
 
