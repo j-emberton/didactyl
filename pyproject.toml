@@ -44,9 +44,10 @@ Issues = "https://github.com/j-emberton/didactyl/issues"
 
 [dependency-groups]
 dev = [
+  "prek>=0.4.11",
   "pyrefly>=1.1.0",
   "pytest-cov>=7.0",
-  "ruff>=0.16",
+  "ruff>=0.16,<0.17",
 ]
 
 [tool.pytest.ini_options]
