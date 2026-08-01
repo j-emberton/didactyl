@@ -1,14 +1,14 @@
 import pathlib
 
-from didactyl import (
+from didactyl import verify_course
+from didactyl._scaffold import (
     ExerciseScaffold,
     TutorialScaffold,
     apply_scaffold,
-    load_course,
     scaffold_exercise,
     scaffold_tutorial,
-    verify_course,
 )
+from didactyl.course import load_course
 
 
 def test_tutorial_scaffold_starts_empty(tmp_path: pathlib.Path) -> None:

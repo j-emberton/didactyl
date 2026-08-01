@@ -1,0 +1,28 @@
+format_version = 1
+
+[course]
+id = "my-tutorial"
+title = "My Tutorial"
+version = 1
+state_directory = ".tutorial-engine"
+welcome_message = """
+Welcome to My Tutorial.
+
+Edit the current exercise and save it to run the check again.
+"""
+completion_message = """
+You have completed My Tutorial.
+"""
+[[exercises]]
+name = "intro-example"
+title = "Complete the generated example"
+path = "tutorial/exercises/00_intro/intro_example.py"
+starter = "tutorial/starters/00_intro/intro_example.py"
+check = "tutorial/checks/00_intro/test_intro_example.py"
+solution = "tutorial/solutions/00_intro/intro_example.py"
+lesson = "tutorial/lessons/00_intro/intro_example.md"
+timeout = 20.0
+expected_failure = "tutorial-incomplete"
+hint = """
+Replace this hint with guidance specific to the exercise.
+"""

@@ -86,6 +86,7 @@ ignore = [
 "src/didactyl/_cli.py" = ["T201"]
 "src/didactyl/cli.py" = ["T201"]
 "src/didactyl/_tui.py" = ["SIM"]
+"tutorial/**" = ["D103", "INP001", "S101"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "google"
