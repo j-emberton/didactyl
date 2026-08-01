@@ -1,7 +1,7 @@
 """Public scaffolding API."""
 
 from didactyl._models import ScaffoldFile, ScaffoldPlan, ScaffoldResult
-from didactyl._scaffold import (
+from didactyl.scaffold._scaffold import (
     ExerciseScaffold,
     TutorialScaffold,
     apply_scaffold,

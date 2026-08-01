@@ -16,7 +16,7 @@ from didactyl._progress import (
     select_exercise,
 )
 from didactyl._runner import check_all, run_exercise, verify_course
-from didactyl._scaffold import scaffold_exercise, scaffold_tutorial
+from didactyl.scaffold._scaffold import scaffold_exercise, scaffold_tutorial
 from didactyl._tui import run_tui
 from didactyl._version import __version__
 
